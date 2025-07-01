@@ -111,6 +111,9 @@ for it in range(iterations):
     conf_centers = stuff[0]
     confs = stuff[1]
 
+confs = [y for _, y in sorted(zip([z[1] for z in conf_centers], confs), reverse=True)]
+conf_centers = [x for _, x in sorted(zip([z[1] for z in conf_centers], conf_centers), reverse=True)]
+
 for i in range(num_confs):
     print(conf_centers[i])
     for team in confs[i]:
